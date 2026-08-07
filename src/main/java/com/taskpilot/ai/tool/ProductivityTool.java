@@ -10,7 +10,7 @@ import com.taskpilot.task.TaskPriority;
 import com.taskpilot.task.TaskRepository;
 import com.taskpilot.task.TaskStatus;
 
-@Component
+//@Component
 public class ProductivityTool {
 
     private final TaskRepository taskRepository;

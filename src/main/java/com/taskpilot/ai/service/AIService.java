@@ -21,12 +21,15 @@ public class AIService {
 		}
 
     public String chat(String message) {
-    	String lower = message.trim().toLowerCase();
+    	message = message.trim();
+    	String lower = message.toLowerCase();
     	if (conversationState.getLastTaskTitle() != null) {
 
-    	    message = message.replace(" it ", " " + conversationState.getLastTaskTitle() + " ");
-    	    message = message.replace(" it.", " " + conversationState.getLastTaskTitle() + ".");
-    	    message = message.replace(" it?", " " + conversationState.getLastTaskTitle() + "?");
+    		if (conversationState.getLastTaskTitle() != null) {
+
+    		    message = message.replaceAll("\\bit\\b",
+    		            conversationState.getLastTaskTitle());
+    		}
     	}
 
     	if (lower.equals("yes") || lower.equals("yes, create it")) {
@@ -74,26 +77,11 @@ public class AIService {
 
         String content = response.content();
 
-        // Save last AI response
+
         conversationState.setLastResponse(content);
 
-        // Remember task names for follow-up conversations
-        String lowerResponse = content.toLowerCase();
-
-        if (lowerResponse.contains("task")) {
-
-            if (lower.contains("create")) {
-                conversationState.setLastTaskTitle(message);
-            }
-
-            if (lower.contains("finish")
-                    || lower.contains("completed")
-                    || lower.contains("delete")
-                    || lower.contains("rename")
-                    || lower.contains("priority")) {
-
-                conversationState.setLastTaskTitle(message);
-            }
+        if (content == null || content.isBlank()) {
+            return "I couldn't understand that. Could you rephrase it?";
         }
 
         return content;

@@ -64,7 +64,10 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         configuration.setAllowedOriginPatterns(
-        	    List.of("http://localhost:*")
+        	    List.of(
+        	        "http://localhost:*",
+        	        "https://taskpilot-ui-production.up.railway.app"
+        	    )
         	);
         configuration.setAllowedMethods(
                 List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
