@@ -10,7 +10,7 @@ import com.taskpilot.task.TaskPriority;
 import com.taskpilot.task.TaskRepository;
 import com.taskpilot.task.TaskStatus;
 
-//@Component
+@Component
 public class WeeklyReportTool {
 
     private final TaskRepository taskRepository;
