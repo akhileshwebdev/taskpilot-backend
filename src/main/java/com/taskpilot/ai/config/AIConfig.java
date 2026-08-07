@@ -32,7 +32,6 @@ public class AIConfig {
     public ChatClient chatClient(
             ChatModel chatModel,
             TaskTool taskTool,
-            DashboardSummaryTool dashboardSummaryTool,
             PlanningTool planningTool,
             ProductivityTool productivityTool,
             ChatMemory chatMemory,
