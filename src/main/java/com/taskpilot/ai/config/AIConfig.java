@@ -32,27 +32,27 @@ public class AIConfig {
     public ChatClient chatClient(
             ChatModel chatModel,
             TaskTool taskTool,
-//            PlanningTool planningTool,
-//            ProductivityTool productivityTool,
+            PlanningTool planningTool,
+            ProductivityTool productivityTool,
             ChatMemory chatMemory,
-            WeeklyReportTool weeklyReportTool
-//            InsightsTool insightsTool,
-//            PriorityOptimizerTool priorityOptimizerTool,
-//            TaskEditTool taskEditTool,
-//            DuplicateTaskTool duplicateTaskTool
+            WeeklyReportTool weeklyReportTool,
+            InsightsTool insightsTool,
+            PriorityOptimizerTool priorityOptimizerTool,
+            TaskEditTool taskEditTool,
+            DuplicateTaskTool duplicateTaskTool
     ) {
 
         return ChatClient.builder(chatModel)
         		.defaultTools(
         			    taskTool,
         			    
-//        			    planningTool,
-//        			    productivityTool,
-        			    weeklyReportTool
-//        			    insightsTool,
-//        			    priorityOptimizerTool,
-//        			    taskEditTool
-//        			    duplicateTaskTool
+        			    planningTool,
+        			    productivityTool,
+        			    weeklyReportTool,
+        			    insightsTool,
+        			    priorityOptimizerTool,
+        			    taskEditTool,
+        			    duplicateTaskTool
         			)
                 .defaultAdvisors(
                         MessageChatMemoryAdvisor.builder(chatMemory).build()
