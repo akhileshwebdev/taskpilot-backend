@@ -9,7 +9,7 @@ import com.taskpilot.task.Task;
 import com.taskpilot.task.TaskRepository;
 import com.taskpilot.task.TaskStatus;
 
-//@Component
+@Component
 public class DuplicateTaskTool {
 
     private final TaskRepository taskRepository;
