@@ -45,7 +45,7 @@ public class AIConfig {
         return ChatClient.builder(chatModel)
         		.defaultTools(
         			    taskTool,
-        			    dashboardSummaryTool,
+        			    
         			    planningTool,
         			    productivityTool,
         			    weeklyReportTool,
